@@ -8,15 +8,16 @@ ${URL}            https://automationexercise.com/
 
 *** Test Cases ***
 Add Product To Cart And Verify
+    Maximize Browser Window
     Add First Product To Cart
     Continue Shopping
     Add Second Product To Cart
     View Cart
     
 *** Keywords ***
-
 Add First Product To Cart
     Click Element    xpath=//a[@href='/products']
+    Execute JavaScript    document.body.style.zoom='80%'
     Mouse Over       xpath=(//div[@class='product-image-wrapper'])[1]
     Click Element    xpath=(//a[@data-product-id='1'])
 
